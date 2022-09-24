@@ -7,7 +7,7 @@ async function Submit() {
     email: formThongTinCaNhan.querySelector("input[name=email]").value,
     mssv: formThongTinCaNhan.querySelector("input[name=mssv]").value,
     LopSV: formThongTinCaNhan.querySelector("input[name=LopSV]").value,
-    FacebookURL: formThongTinXetTuyen.querySelector("input[name=FacebookURL]").value,
+    FacebookURL: formThongTinCaNhan.querySelector("input[name=FacebookURL]").value,
     LyDoThamGia: formThongTinXetTuyen.querySelector("textarea[name=LyDoThamGia]").value,
     TinhCachMuonLamViec: formThongTinXetTuyen.querySelector("input[name=TinhCachMuonLamViec]").value,
     TinhCachKhongMuonLamViec: formThongTinXetTuyen.querySelector("input[name=TinhCachKhongMuonLamViec]").value,

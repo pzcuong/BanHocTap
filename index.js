@@ -53,7 +53,16 @@ app.post('/dangky/:vitri', async (req, res) => {
         let spreadsheetId = "1GgsKb5WksC1SOLcbq5V-PmEJVHw22asw7mSOf6ufGd8";
         if(vitri != 'Training' && vitri != 'TruyenThong' && vitri != 'Khac')
             res.redirect('/');
+        
+        let check = await XuLyDuLieu(data);
+        if(!check.success)
+            return res.json({
+                status: 400,
+                message: check.message
+            });
+
         let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "A:F");
+        
         for (value in dataSheets) {
             if(dataSheets[value].at(0) == data.email) 
                 return res.json({
@@ -68,12 +77,6 @@ app.post('/dangky/:vitri', async (req, res) => {
         }
         console.log(data);
     
-        if(!data.name || !data.email || !data.mssv || !data.LopSV || !data.FacebookURL || !data.LyDoThamGia || !data.TinhCachMuonLamViec || !data.TinhCachKhongMuonLamViec || !data.TinhHuong || !data.CauHoi2)
-            return res.json({
-                success: false,
-                message: "Vui lòng điền đầy đủ thông tin"
-            });
-    
         //Insert to Tổng quan
         spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:F", [[
             data.email,
@@ -83,14 +86,13 @@ app.post('/dangky/:vitri', async (req, res) => {
             req.params.vitri,
             data.FacebookURL
         ]]);
-        //Insert to Training
         let dataInsert = [[
             data.mssv,
             data.LyDoThamGia,
             data.TinhCachMuonLamViec,
             data.TinhCachKhongMuonLamViec,
             data.TinhHuong,
-            data.TinhHuongTraining
+            data.CauHoi2
         ]];
         if(req.params.vitri == 'Training') {
             await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Training'!A:F", dataInsert);
@@ -117,6 +119,7 @@ app.post('/dangky/:vitri', async (req, res) => {
     }
 });
 
+
 app.use((req, res, next) => {
     let html = pug.renderFile('public/404.pug', {
         message: 'OOps! Page not found',
@@ -133,3 +136,46 @@ app.listen(port, function () {
     console.log('Server listening on port ' + port);
 });
 
+async function XuLyDuLieu(data) {
+    let check = true;
+    let loi;
+    if(!data.name || data.name.length < 5)
+        check = false,
+        loi = "Tên không hợp lệ";
+    if(!data.email || !data.email.includes('@') || !data.email.includes('.'))
+        check = false,
+        loi = "Email không hợp lệ";
+    if(!data.mssv || data.mssv.length != 8)
+        check = false,
+        loi = "Mã số sinh viên không hợp lệ";
+    if(!data.LopSV)
+        check = false,
+        loi = "Lớp sinh viên không hợp lệ";
+    if(!data.FacebookURL || !data.FacebookURL.includes('.com'))
+        check = false,
+        loi = "Facebook URL không hợp lệ";
+    if(!data.LyDoThamGia || data.LyDoThamGia.length < 5)   
+        check = false,
+        loi = "Lý do tham gia không hợp lệ";
+    if(!data.TinhCachMuonLamViec || data.TinhCachMuonLamViec.length < 5)
+        check = false,
+        loi = "Tính cách muốn làm việc không hợp lệ";
+    if(!data.TinhCachKhongMuonLamViec || data.TinhCachKhongMuonLamViec.length < 5)
+        check = false,
+        loi = "Tính cách không muốn làm việc không hợp lệ";
+    if(!data.TinhHuong || data.TinhHuong.length < 5) 
+        check = false,
+        loi = "Tình huống không hợp lệ";
+    if(!data.CauHoi2 || data.CauHoi2.length < 5)
+        check = false,
+        loi = "Câu hỏi 2 không hợp lệ";
+    if(!check)
+        return ({
+            success: false,
+            message: loi
+        })
+    return ({
+        success: true,
+        message: "Dữ liệu hợp lệ"
+    })
+}
