@@ -66,7 +66,7 @@ app.post('/dangky/:vitri', async (req, res) => {
             });
     }
 
-    if(!data.name || !data.email || !data.mssv || !data.LopSV || !data.FacebookURL || !data.LyDoThamGia || !data.TinhCachMuonLamViec || !data.TinhCachKhongMuonLamViec || !data.TinhHuong || !data.TinhHuongTraining)
+    if(!data.name || !data.email || !data.mssv || !data.LopSV || !data.FacebookURL || !data.LyDoThamGia || !data.TinhCachMuonLamViec || !data.TinhCachKhongMuonLamViec || !data.TinhHuong || !data.CauHoi2)
         return res.json({
             success: false,
             message: "Vui lòng điền đầy đủ thông tin"
