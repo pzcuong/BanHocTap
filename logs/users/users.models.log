@@ -1,0 +1,296 @@
+11:55:44 - Lỗi truy vấn SQL - bccc	RequestError: Could not find stored procedure 'bccc'.
+11:55:45 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordset')
+18/8/2022 11:57:50 - Lỗi truy vấn SQL - bccc	RequestError: Could not find stored procedure 'bccc'.
+18/8/2022 11:57:52 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordset')
+18/8/2022 11:58:11 - Lỗi truy vấn SQL - select * from users	RequestError: The SELECT permission was denied on the object 'users', database 'QuanLyMayChu', schema 'dbo'.
+18/8/2022 11:58:12 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordset')
+18/8/2022 12:2:26 - Lỗi LayCauHoi - TypeError: Cannot read properties of undefined (reading 'LuocDo')
+18/8/2022 12:5:32 - Lỗi LayCauHoi - TypeError: Cannot read properties of undefined (reading 'LuocDo')
+18/8/2022 12:8:13 - Lỗi LayCauHoi - TypeError: Cannot read properties of undefined (reading 'LuocDo')
+18/8/2022 12:36:39 - Lỗi truy vấn SQL - a	RequestError: Could not find stored procedure 'a'.
+18/8/2022 12:36:40 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordset')
+18/8/2022 12:40:48 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'Output')
+18/8/2022 13:47:11 - Lỗi truy vấn SQL - insert into users 
+            (username, fullname, rawpassword, password, refreshToken, email, phoneNumber, role) 
+            values (Guest6, 1, Cuong01242663149, $2a$10$HyDaKYKEQa0MJ4Py4SfPp.RZ9hKoVA2S14/XHkxRW1cGqygQQiiEG, 8tQhGmgvwD1MOQ4oTmbzdwMd, 1, 1, SinhVien)	RequestError: Incorrect syntax near 'a$10$HyDaKYKEQa0MJ4Py4SfPp'.
+18/8/2022 13:47:11 - Lỗi createUser - TypeError: Cannot read properties of undefined (reading 'rowsAffected')
+18/8/2022 19:32:56 - Lỗi truy vấn SQL - select top(1) from sinhvien
+select * from detai	RequestError: Incorrect syntax near the keyword 'from'.
+18/8/2022 19:32:57 - Lỗi XuLySQL (Guest6) - TypeError: Cannot read properties of undefined (reading 'recordset')
+18/8/2022 20:29:10 - Lỗi XuLySQL (pzcuong) - ReferenceError: Similarity is not defined
+18/8/2022 20:30:6 - Lỗi XuLySQL (pzcuong) - Error: first argument should be a string
+18/8/2022 20:30:53 - Lỗi XuLySQL (pzcuong) - Error: first argument should be a string
+18/8/2022 21:11:21 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = undefined	RequestError: Invalid column name 'undefined'.
+18/8/2022 21:16:58 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = undefined	RequestError: Invalid column name 'undefined'.
+19/8/2022 13:6:0 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = 2;select * from users	RequestError: Invalid object name 'users'.
+19/8/2022 13:7:59 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = 2;DELETE FROM dbo.Admin_Users WHERE username = 1	RequestError: Conversion failed when converting the nvarchar value 'cmkemlanh' to data type int.
+19/8/2022 13:12:10 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = 2;DELETE FROM dbo.Admin_Users WHERE username ='1'	RequestError: The DELETE permission was denied on the object 'Admin_Users', database 'QuanLyMayChu', schema 'dbo'.
+19/8/2022 13:37:24 - Lỗi truy vấn SQL - select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 	RequestError: Invalid column name 'male'.
+19/8/2022 13:37:25 - Lỗi XuLySQL (Guest5) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+19/8/2022 13:43:35 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = 'male' and dt.madt < 20 ', N'100', '[object Object]')	RequestError: Incorrect syntax near 'male'.
+19/8/2022 13:45:54 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', '[object Object]')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 13:46:50 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', '[object Object]')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 13:47:33 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', '[object Object]')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 13:48:8 - Lỗi truy vấn SQL - SELECT GETDATE() AS ThoiGian AT TIME ZONE 'UTC' AT TIME ZONE 'N. Central Asia Standard Time'	RequestError: Incorrect syntax near 'AT'.
+19/8/2022 13:48:8 - Lỗi truy vấn SQL - TypeError: Cannot read properties of undefined (reading 'recordset')
+19/8/2022 14:36:5 - Lỗi truy vấn SQL - select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 	RequestError: Invalid column name 'male'.
+19/8/2022 14:36:7 - Lỗi XuLySQL (Guest5) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+19/8/2022 18:16:51 - Lỗi truy vấn SQL - select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 	RequestError: Invalid column name 'male'.
+19/8/2022 18:16:52 - Lỗi XuLySQL (Guest5) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+19/8/2022 18:18:31 - Lỗi truy vấn SQL - select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 	RequestError: Invalid column name 'male'.
+19/8/2022 18:18:32 - Lỗi XuLySQL (Guest5) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+19/8/2022 18:19:7 - Lỗi truy vấn SQL - TypeError: Cannot read properties of undefined (reading '0')
+19/8/2022 18:19:56 - Lỗi truy vấn SQL - TypeError: Cannot read properties of undefined (reading '0')
+19/8/2022 18:43:35 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', '[object Object]')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 18:44:18 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'Fri Aug 19 2022 11:44:52 GMT+0700 (Indochina Time)')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 18:44:47 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'Fri Aug 19 2022 11:45:20 GMT+0700 (Indochina Time)')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 18:45:5 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'undefined')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 18:45:29 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'undefined')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 18:45:58 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'undefined')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 18:46:20 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'Fri Aug 19 2022 11:46:53 GMT+0700 (Indochina Time)')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 20:19:9 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'Fri Aug 19 2022 13:19:43 GMT+0700 (Indochina Time)')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 20:19:43 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'Fri Aug 19 2022 13:20:16 GMT+0700 (Indochina Time)')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 20:20:41 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', 'Fri Aug 19 2022 13:21:14 GMT+0700 (Indochina Time)')	RequestError: Conversion failed when converting date and/or time from character string.
+19/8/2022 20:22:39 - Lỗi truy vấn SQL - insert into Admin_SQLSubmitHistory(Username, MaCH, SQLQuery, KetQua, ThoiGian) 
+            values(N'Guest5', 1, N'select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 ', N'100', SELECT GETDATE() AT TIME ZONE 'N. Central Asia Standard Time' AS ThoiGian)	RequestError: Incorrect syntax near ')'.
+19/8/2022 20:25:46 - Lỗi truy vấn SQL - GETDATE() AT TIME ZONE 'N. Central Asia Standard Time'	RequestError: Incorrect syntax near ')'.
+19/8/2022 20:25:46 - Lỗi truy vấn SQL - TypeError: Cannot read properties of undefined (reading 'recordset')
+19/8/2022 21:9:33 - Lỗi truy vấn SQL - select * from Admin_SQLSubmitHistory where MaCH = undefined and username = 'Guest5'	RequestError: Invalid column name 'undefined'.
+19/8/2022 21:11:23 - Lỗi truy vấn SQL - select * from Admin_SQLSubmitHistory where MaCH = undefined and username = 'Guest5'	RequestError: Invalid column name 'undefined'.
+19/8/2022 21:18:12 - Lỗi LayLichSuTruyVan - ReferenceError: TieuDe is not defined
+19/8/2022 21:27:53 - Lỗi LayLichSuTruyVan - TypeError: Cannot set properties of undefined (setting 'KetQua')
+19/8/2022 21:28:46 - Lỗi LayLichSuTruyVan - TypeError: Cannot read properties of undefined (reading 'KetQua')
+19/8/2022 21:29:2 - Lỗi LayLichSuTruyVan - TypeError: Cannot read properties of undefined (reading 'push')
+19/8/2022 21:29:50 - Lỗi LayLichSuTruyVan - TypeError: Cannot set properties of undefined (setting 'TieuDe')
+19/8/2022 21:30:38 - Lỗi LayLichSuTruyVan - TypeError: Cannot set properties of undefined (setting 'KetQua')
+19/8/2022 21:30:57 - Lỗi LayLichSuTruyVan - TypeError: Cannot set properties of undefined (setting 'KetQua')
+19/8/2022 21:32:7 - Lỗi LayLichSuTruyVan - TypeError: Cannot set properties of undefined (setting 'KetQua')
+19/8/2022 21:38:4 - Lỗi LayLichSuTruyVan - TypeError: Cannot set properties of undefined (setting 'KetQua')
+20/8/2022 13:54:29 - Lỗi truy vấn SQL - update Admin_Users set password = $2a$10$lXgHvZoFdWt4wJypDQFsbeLYvG0/Mt38QCCKoSh/dU9VOjTY5AL1. where username = pzcuong	RequestError: Incorrect syntax near 'a$10$lXgHvZoFdWt4wJypDQFsbeLYvG0'.
+20/8/2022 13:54:29 - Lỗi updatePassword - TypeError: Cannot read properties of undefined (reading 'rowsAffected')
+20/8/2022 13:55:24 - Lỗi truy vấn SQL - update Admin_Users set password = N'$2a$10$QS72WL0r36yEcZ4lcKO4D.YQBoJfCCZEqNaHKD5UGLrmXzSkikDUu' where username = pzcuong	RequestError: Invalid column name 'pzcuong'.
+20/8/2022 13:55:24 - Lỗi updatePassword - TypeError: Cannot read properties of undefined (reading 'rowsAffected')
+20/8/2022 20:53:52 - Lỗi truy vấn SQL - insert into Admin_Users 
+            (username, fullname, rawpassword, password, refreshToken, email, phoneNumber, role) 
+            values (N'Test2', N'Cuong Pham', N'Cuong01242663149', N'$2a$10$KALvsuQ8uMuYlqOmgTwfzu9IqzPcQGj.MasePEjJMASqqoicuRFkS', N'mJ84u4UvGs7dPUlbYhQUxX5v', N'dok2308@gmail.com', '+84387152838', 'SinhVien')	RequestError: String or binary data would be truncated in table 'QuanLyMayChu.dbo.Admin_Users', column 'phoneNumber'. Truncated value: '+843871528'.
+20/8/2022 20:53:52 - Lỗi createUser - TypeError: Cannot read properties of undefined (reading 'rowsAffected')
+20/8/2022 21:53:17 - Lỗi truy vấn SQL - select * from Admin_BaiTapTeam where username = 'IT004_BHT'	RequestError: Invalid column name 'username'.
+20/8/2022 21:54:10 - Lỗi truy vấn SQL - select * from Admin_BaiTapTeam where username = 'IT004_BHT'	RequestError: Invalid column name 'username'.
+20/8/2022 22:9:46 - Lỗi truy vấn SQL - select * from tamgiac	RequestError: The SELECT permission was denied on the object 'TamGiac', database 'QuanLyMayChu', schema 'dbo'.
+20/8/2022 22:9:48 - Lỗi XuLySQL (21520833) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+21/8/2022 14:57:56 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = nicepage.css	RequestError: The multi-part identifier "nicepage.css" could not be bound.
+21/8/2022 14:57:56 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = Nộp-bài-SQL.css	RequestError: The multi-part identifier "SQL.css" could not be bound.
+21/8/2022 14:57:57 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = jquery.js	RequestError: The multi-part identifier "jquery.js" could not be bound.
+21/8/2022 14:59:28 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = jquery.js	RequestError: The multi-part identifier "jquery.js" could not be bound.
+21/8/2022 14:59:40 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = jquery.js	RequestError: The multi-part identifier "jquery.js" could not be bound.
+21/8/2022 15:1:0 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = jquery.js	RequestError: The multi-part identifier "jquery.js" could not be bound.
+21/8/2022 15:31:41 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = jquery.js	RequestError: The multi-part identifier "jquery.js" could not be bound.
+21/8/2022 15:31:41 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = nicepage.js	RequestError: The multi-part identifier "nicepage.js" could not be bound.
+21/8/2022 15:35:5 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = Nộp-bài-SQL.css	RequestError: The multi-part identifier "SQL.css" could not be bound.
+21/8/2022 15:35:5 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = nicepage.js	RequestError: The multi-part identifier "nicepage.js" could not be bound.
+21/8/2022 15:35:5 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = nicepage.css	RequestError: The multi-part identifier "nicepage.css" could not be bound.
+21/8/2022 15:35:5 - Lỗi truy vấn SQL - select * from Admin_CauHoi where MaCH = jquery.js	RequestError: The multi-part identifier "jquery.js" could not be bound.
+21/8/2022 22:58:36 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH INNER JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = 3 AND LS.Username = pzcuong
+            ORDER BY LS.ThoiGian DESC	RequestError: Invalid column name 'pzcuong'.
+21/8/2022 22:59:16 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH INNER JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'3' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC	RequestError: The SELECT permission was denied on the object 'Admin_SQLSubmitHistory', database 'QuanLyMayChu', schema 'dbo'.
+21/8/2022 23:3:6 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH INNER JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'3--;' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC	RequestError: The SELECT permission was denied on the object 'Admin_SQLSubmitHistory', database 'QuanLyMayChu', schema 'dbo'.
+21/8/2022 23:3:39 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH INNER JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'3--;' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value '3--;' to data type int.
+21/8/2022 23:4:0 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH INNER JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'3--' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value '3--' to data type int.
+21/8/2022 23:28:51 - Lỗi truy vấn SQL - DECLARE @TonTai INT
+        SELECT DISTINCT @TonTai = COUNT(Username) 
+        FROM dbo.Admin_SQLSubmitHistory 
+        WHERE Username = N'pzcuong' AND MaCH = N'1--;'
+        IF @TonTai = 1
+            SELECT *
+            FROM Admin_CauHoi CH FULL JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'1--;' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC
+        ELSE
+            SELECT *
+            FROM Admin_CauHoi CH FULL JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'1--;'
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value '1--;' to data type int.
+21/8/2022 23:29:15 - Lỗi truy vấn SQL - DECLARE @TonTai INT
+        SELECT DISTINCT @TonTai = COUNT(Username) 
+        FROM dbo.Admin_SQLSubmitHistory 
+        WHERE Username = N'pzcuong' AND MaCH = N'1--;'
+        IF @TonTai = 1
+            SELECT *
+            FROM Admin_CauHoi CH FULL JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'1--;' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC
+        ELSE
+            SELECT *
+            FROM Admin_CauHoi CH FULL JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'1--;'
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value '1--;' to data type int.
+21/8/2022 23:30:58 - Lỗi truy vấn SQL - DECLARE @TonTai INT
+        SELECT DISTINCT @TonTai = COUNT(Username) 
+        FROM dbo.Admin_SQLSubmitHistory 
+        WHERE Username = N'pzcuong' AND MaCH = N'1--;'
+        IF @TonTai = 1
+            SELECT *
+            FROM Admin_CauHoi CH FULL JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'1--;' AND LS.Username = N'pzcuong'
+            ORDER BY LS.ThoiGian DESC
+        ELSE
+            SELECT *
+            FROM Admin_CauHoi CH FULL JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE CH.MaCH = N'1--;'
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value '1--;' to data type int.
+22/8/2022 8:55:35 - Lỗi truy vấn SQL - select username, fullname, birthday, email, phoneNumber, team from Admin_Users where username = 'pzcuong'	ConnectionError: Failed to connect to pzcuong.database.windows.net:1433 in 15000ms
+22/8/2022 9:14:45 - Lỗi LayCauHoi - ReferenceError: username is not defined
+22/8/2022 10:1:26 - Lỗi LayDanhSachCauHoi - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 10:27:37 - Lỗi truy vấn SQL - select sv.masv, sv.ho + sv.ten as hoten from sinhvien sv, sinhvien_detai svdt, detai dt where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = "male" and dt.madt < 20 	RequestError: Invalid column name 'male'.
+22/8/2022 10:27:38 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+22/8/2022 10:31:13 - Lỗi LayDanhSachCauHoi - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 10:37:53 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'pzcuong' OR Username IS NULL) AND CH.MaCH = N'1--'
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value '1--' to data type int.
+22/8/2022 10:38:28 - Lỗi truy vấn SQL - select * from u	RequestError: Invalid object name 'u'.
+22/8/2022 10:38:29 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+22/8/2022 10:38:40 - Lỗi truy vấn SQL - select * from admin_users	RequestError: The SELECT permission was denied on the object 'Admin_Users', database 'QuanLyMayChu', schema 'dbo'.
+22/8/2022 10:38:42 - Lỗi XuLySQL (pzcuong) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+22/8/2022 20:48:29 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'pzcuong' OR Username IS NULL) AND CH.MaCH = N'3 AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Incorrect syntax near '3 AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC'.
+22/8/2022 20:48:37 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'pzcuong' OR Username IS NULL) AND CH.MaCH = N'2 AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Incorrect syntax near '2 AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC'.
+22/8/2022 21:3:42 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'pzcuong' OR Username IS NULL) AND CH.MaCH = N'jquery.js' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'jquery.js' to data type int.
+22/8/2022 21:30:52 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'pzcuong' OR Username IS NULL) AND CH.MaCH = N'undefined' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'undefined' to data type int.
+22/8/2022 22:42:50 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 22:43:18 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 22:43:52 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 22:43:52 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 22:44:12 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'username')
+22/8/2022 22:44:40 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, KQ.KetQua
+        FROM (
+                SELECT MaCH, LS.KetQua
+                FROM Admin_SQLSubmitHistory LS 
+                WHERE LS.Username = N'pzcuong' AND LS.KetQua = '100'
+            ) KQ RIGHT JOIN Admin_BaiTapCauHoi BTCH ON BTCH.MACH = KQ.MaCH INNER JOIN Admin_CauHoi CH ON CH.MaCH = BTCH.MACH 
+        WHERE BTCH.MaBT IN (
+            SELECT BTN.MaBT
+            FROM Admin_BaiTapTheoNhom BTN INNER JOIN Admin_ThanhVienNhom TVN ON TVN.MaNhom = BTN.MaNhom
+            WHERE TVN.Username = N'pzcuong AND BTN.MaBT = N'BT1'
+        )	RequestError: Unclosed quotation mark after the character string '
+        )'.
+22/8/2022 22:44:40 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'recordset')
+22/8/2022 22:45:8 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'LuocDo')
+22/8/2022 23:50:7 - Lỗi truy vấn SQL - 2	RequestError: Incorrect syntax near '2'.
+22/8/2022 23:50:7 - Lỗi XuLySQL (undefined) - ReferenceError: MaBT is not defined
+28/8/2022 16:30:41 - Lỗi truy vấn SQL - select * from Admin_Users where username = 'pzcuong'	ConnectionError: Login failed for user 'pzcuong'.
+28/8/2022 16:32:4 - Lỗi truy vấn SQL - select * from Admin_Users where username = 'pzcuong'	ConnectionError: Cannot open server 'wequery' requested by the login. Client with IP address '113.188.96.101' is not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+28/8/2022 16:34:56 - Lỗi truy vấn SQL - select * from Admin_Users where username = 'pzcuong'	ConnectionError: Login failed for user 'pzcuong'.
+28/8/2022 16:40:42 - Lỗi truy vấn SQL - select * from Admin_Users where username = 'pzcuong'	ConnectionError: Login failed for user 'pzcuong'.
+28/8/2022 16:42:11 - Lỗi truy vấn SQL - select * from Admin_Users where username = 'pzcuong'	RequestError: Invalid object name 'Admin_Users'.
+28/8/2022 17:17:22 - Lỗi truy vấn SQL - select username, fullname, birthday, email, phoneNumber from Admin_Users where username = '20521150'	RequestError: Invalid column name 'birthday'.
+28/8/2022 21:4:4 - Lỗi truy vấn SQL - SELECT CH.MaCH, KQ.KetQua, CH.MucDo, CH.TieuDe, CH.LuocDo
+            FROM (SELECT DISTINCT LS.MaCH, LS.Username, LS.KetQua
+                FROM Admin_SQLSubmitHistory LS
+                WHERE LS.KetQua = N'100' AND LS.Username = N'pzcuong') KQ RIGHT JOIN Admin_CauHoi CH ON CH.MaCH = KQ.MaCH
+            WHERE CH.TinhTrang = 1	RequestError: Invalid column name 'TinhTrang'.
+28/8/2022 21:26:15 - Lỗi LayCauHoi - TypeError: Cannot read properties of undefined (reading 'username')
+28/8/2022 21:30:0 - Lỗi LayCauHoi - TypeError: Cannot read properties of undefined (reading 'username')
+28/8/2022 22:2:48 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'20521150' OR Username IS NULL) AND CH.MaCH = N'jquery.js' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'jquery.js' to data type int.
+28/8/2022 22:4:13 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'20521150' OR Username IS NULL) AND CH.MaCH = N'jquery.js' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'jquery.js' to data type int.
+28/8/2022 22:4:21 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'20521150' OR Username IS NULL) AND CH.MaCH = N'jquery.js' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'jquery.js' to data type int.
+28/8/2022 22:50:59 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'20521150' OR Username IS NULL) AND CH.MaCH = N'jquery.js' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'jquery.js' to data type int.
+28/8/2022 22:51:50 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, LS.SQLQuery, LS.KetQua, LS.ThoiGian
+            FROM Admin_CauHoi CH LEFT JOIN Admin_SQLSubmitHistory LS ON LS.MaCH = CH.MaCH
+            WHERE (Username = N'20521150' OR Username IS NULL) AND CH.MaCH = N'jquery.js' AND CH.TinhTrang = 1
+            ORDER BY LS.ThoiGian DESC	RequestError: Conversion failed when converting the nvarchar value 'jquery.js' to data type int.
+2/9/2022 21:22:32 - Lỗi truy vấn SQL - select username, fullname, SinhNhat, email, phoneNumber from Admin_Users where username = '20521150'	ConnectionError: Failed to connect to wequery.database.windows.net:1433 in 15000ms
+3/9/2022 11:3:37 - Lỗi LayCauHoi - TypeError: Cannot read properties of null (reading 'length')
+3/9/2022 11:4:52 - Lỗi LayCauHoi - TypeError: Cannot read properties of null (reading 'length')
+3/9/2022 11:5:15 - Lỗi LayCauHoi - TypeError: Cannot read properties of null (reading 'length')
+3/9/2022 11:8:2 - Lỗi truy vấn SQL - select * from sanpham	ConnectionError: Login failed for user 'UserAccount'.
+3/9/2022 11:8:2 - Lỗi XuLySQL (20521150) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+3/9/2022 13:43:46 - Lỗi truy vấn SQL - select * from admin_users	RequestError: The SELECT permission was denied on the object 'Admin_Users', database 'WeQuery', schema 'dbo'.
+3/9/2022 13:43:47 - Lỗi XuLySQL (20521150) - TypeError: Cannot read properties of undefined (reading 'recordsets')
+3/9/2022 13:51:42 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'KetQua')
+3/9/2022 13:52:11 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of null (reading 'length')
+3/9/2022 13:54:26 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'KetQua')
+3/9/2022 13:58:34 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'KetQua')
+3/9/2022 14:2:2 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'KetQua')
+3/9/2022 14:2:55 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'KetQua')
+3/9/2022 14:3:8 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'KetQua')
+3/9/2022 14:5:44 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'MaCH')
+3/9/2022 14:6:3 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'MaCH')
+3/9/2022 14:6:49 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'MaCH')
+3/9/2022 14:7:34 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'MaCH')
+3/9/2022 14:8:16 - Lỗi LayNoiDungBaiTap - TypeError: Cannot read properties of undefined (reading 'MaCH')
+3/9/2022 17:5:37 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, KQ.KetQua, KQ.SQLQuery, KQ.ThoiGian, BTCH.MaBT
+        FROM (
+                SELECT MaCH, LS.KetQua, LS.SQLQuery, LS.ThoiGian
+                FROM Admin_SQLSubmitHistory LS 
+                WHERE LS.Username = N'20521150' AND LS.KetQua = N'100'
+            ) KQ RIGHT JOIN Admin_BaiTapCauHoi BTCH ON BTCH.MACH = KQ.MaCH INNER JOIN Admin_CauHoi CH ON CH.MaCH = BTCH.MACH 
+        WHERE BTCH.MaBT IN (
+            SELECT BTN.MaBT
+            FROM Admin_BaiTapTheoNhom BTN INNER JOIN Admin_ThanhVienNhom TVN ON TVN.MaNhom = BTN.MaNhom
+            WHERE TVN.Username = N'20521150' AND BTN.MaBT = '3'
+        )	RequestError: Conversion failed when converting the nvarchar value 'undefined' to data type int.
+3/9/2022 17:6:36 - Lỗi truy vấn SQL - SELECT CH.MaCH, CH.MucDo, CH.TieuDe, CH.NoiDung, CH.LuocDo, KQ.KetQua, KQ.SQLQuery, KQ.ThoiGian, BTCH.MaBT
+        FROM (
+                SELECT MaCH, LS.KetQua, LS.SQLQuery, LS.ThoiGian
+                FROM Admin_SQLSubmitHistory LS 
+                WHERE LS.Username = N'20521150' AND LS.KetQua = N'100'
+            ) KQ RIGHT JOIN Admin_BaiTapCauHoi BTCH ON BTCH.MACH = KQ.MaCH INNER JOIN Admin_CauHoi CH ON CH.MaCH = BTCH.MACH 
+        WHERE BTCH.MaBT IN (
+            SELECT BTN.MaBT
+            FROM Admin_BaiTapTheoNhom BTN INNER JOIN Admin_ThanhVienNhom TVN ON TVN.MaNhom = BTN.MaNhom
+            WHERE TVN.Username = N'20521150' AND BTN.MaBT = N'3'
+        )	RequestError: Conversion failed when converting the nvarchar value 'undefined' to data type int.

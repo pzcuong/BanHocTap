@@ -1,0 +1,98 @@
+18/8/2022 20:9:19 - Lỗi truy vấn SQL - select sv.masv, sv.ho + sv.ten as hoten
+from sinhvien sv, sinhvien_detai svdt, detai dt
+where sv.masv = svdt.masv and svdt.madt = dt.madt and sv.gioitinh = 'male' and dt.madt < 20	ReferenceError: configAdmin is not defined
+18/8/2022 20:9:48 - Lỗi truy vấn SQL - insert into TestCase (MaCH, Input, Output) 
+            values (1, SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20, [[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]])	RequestError: Unclosed quotation mark after the character string '[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten"'.
+18/8/2022 20:9:48 - Lỗi Insert TestCase (admin.models) - insert into TestCase (MaCH, Input, Output) 
+            values (1, SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20, [[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]])	[object Object]
+18/8/2022 20:11:15 - Lỗi truy vấn SQL - insert into TestCase (MaCH, Input, Output) 
+            values ('1', 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20', '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	RequestError: Incorrect syntax near 'Male'.
+18/8/2022 20:11:15 - Lỗi Insert TestCase (admin.models) - insert into TestCase (MaCH, Input, Output) 
+            values ('1', 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20', '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	[object Object]
+18/8/2022 20:12:10 - Lỗi truy vấn SQL - insert into TestCase (MaCH, Input, Output) 
+            values ('1', 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20
+', '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	RequestError: Incorrect syntax near 'Male'.
+18/8/2022 20:12:10 - Lỗi Insert TestCase (admin.models) - insert into TestCase (MaCH, Input, Output) 
+            values ('1', 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20
+', '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	[object Object]
+18/8/2022 20:14:16 - Lỗi truy vấn SQL - insert into TestCase (MaCH, Input, Output) 
+            values ('1', "SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20
+", '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	RequestError: The identifier that starts with 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT ' is too long. Maximum length is 128.
+18/8/2022 20:14:16 - Lỗi Insert TestCase (admin.models) - insert into TestCase (MaCH, Input, Output) 
+            values ('1', "SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20
+", '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	[object Object]
+18/8/2022 20:17:8 - Lỗi Insert TestCase (admin.models) - SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = 'Male' AND DT.MaDT < 20
+	TypeError: QueryData.replace is not a function
+18/8/2022 20:17:45 - Lỗi truy vấn SQL - insert into TestCase (MaCH, Input, Output) 
+            values ('1', 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = "Male" AND DT.MaDT < 20
+', '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	RequestError: Invalid object name 'TestCase'.
+18/8/2022 20:17:45 - Lỗi Insert TestCase (admin.models) - insert into TestCase (MaCH, Input, Output) 
+            values ('1', 'SELECT SV.MaSV, SV.Ho + SV.Ten AS HoTen
+FROM SinhVien SV, SinhVien_DeTai SVDT, DeTai DT
+WHERE SV.MaSV = SVDT.MaSV AND SVDT.MaDT = DT.MaDT AND SV.GioiTinh = "Male" AND DT.MaDT < 20
+', '[[{"masv":61,"hoten":"ArtairMeyrick"},{"masv":99,"hoten":"HiramReggio"},{"masv":113,"hoten":"KrishnahHarrold"},{"masv":323,"hoten":"GraehmeTeasdale"},{"masv":409,"hoten":"SalvadorGoodlatt"},{"masv":582,"hoten":"OmeroVassman"}]]')	[object Object]
+28/8/2022 22:30:55 - Lỗi truy vấn SQL - insert into Admin_CauHoi (MucDo, TieuDe, NoiDung, LuocDo, TinhTrang) 
+            values (N'Dễ', N'Bài tập thực hành', N'In ra danh sách các sản phẩm (MASP,TENSP) do “Trung Quoc” sản xuất.', N'SanPham', 1)	ReferenceError: configAdmin is not defined
+2/9/2022 22:11:16 - Lỗi truy vấn SQL - insert into Admin_BaiTap (TieuDe, TgianBD, TgianKT, TrangThai) 
+            values (N'Thực hành tại lớp 01', '2022-09-02T22:00', '2022-09-11T12:00', 'true');	RequestError: Conversion failed when converting date and/or time from character string.
+2/9/2022 22:20:36 - Lỗi truy vấn SQL - insert into Admin_BaiTap (TieuDe, TgianBD, TgianKT, TrangThai) 
+            values (N'Thực hành tại lớp 01', '2022-09-02T15:00:00.000Z', '2022-09-11T15:20:00.000Z', 'true');	RequestError: Conversion failed when converting the varchar value 'true' to data type int.
+3/9/2022 10:11:36 - Lỗi truy vấn SQL - [object Object]	TypeError: result.bulk is not a function
+3/9/2022 10:17:47 - Lỗi truy vấn SQL - [object Object]	TypeError: result.bulk is not a function
+3/9/2022 10:30:0 - Lỗi truy vấn SQL - [object Object]	TypeError: result.bulk is not a function
+3/9/2022 10:49:8 - Lỗi truy vấn SQL - [object Object]	RequestError: There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+3/9/2022 10:49:54 - Lỗi truy vấn SQL - [object Object]	RequestError: There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+3/9/2022 10:50:36 - Lỗi truy vấn SQL - [object Object]	RequestError: There is already an object named 'SANPHAM' in the database.
+3/9/2022 10:51:31 - Lỗi truy vấn SQL - [object Object]	RequestError: Incorrect syntax near 'SANPHAM'.
+3/9/2022 10:52:10 - Lỗi truy vấn SQL - [object Object]	RequestError: There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+3/9/2022 10:54:36 - Lỗi truy vấn SQL - [object Object]	RequestError: There is already an object named 'SANPHAM' in the database.
+3/9/2022 10:54:50 - Lỗi truy vấn SQL - [object Object]	RequestError: Cannot insert the value NULL into column 'MASP', table 'WeQuery.dbo.SANPHAM'; column does not allow nulls. INSERT fails.
+3/9/2022 21:40:59 - Lỗi truy vấn SQL - select masp, tensp
+from dbo.sanpham
+where nuocsx = "trung quoc"	RequestError: Invalid column name 'trung quoc'.
+3/9/2022 21:43:2 - Lỗi truy vấn SQL - select masp, tensp
+from dbo.sanpham
+where nuocsx = "trung quoc"	RequestError: Invalid column name 'trung quoc'.
+3/9/2022 21:44:26 - Lỗi truy vấn SQL - select masp, tensp
+from dbo.sanpham
+where nuocsx = "trung quoc"	RequestError: Invalid column name 'trung quoc'.
+4/9/2022 19:43:4 - Lỗi truy vấn SQL - select * from dbo.sanpham
+where nuocsx = "trung quoc" or nuocsx = "thai lan"
+intersect
+select * from dbo.sanpham
+where gia between "30000" and "40000"	RequestError: Invalid column name '40000'.
+4/9/2022 19:44:36 - Lỗi truy vấn SQL - select * from dbo.sanpham
+where nuocsx = "trung quoc" or nuocsx = "thai lan"
+intersect
+select * from dbo.sanpham
+where gia between "30000" and "40000"	RequestError: Invalid column name '40000'.
+4/9/2022 19:45:40 - Lỗi truy vấn SQL - select * from dbo.sanpham
+where nuocsx = "trung quoc" or nuocsx = "thai lan"
+intersect
+select * from dbo.sanpham
+where gia between "30000" and "40000"	RequestError: Invalid column name '40000'.
+4/9/2022 22:58:51 - Lỗi truy vấn SQL - select masp, tensp
+from dbo.sanpham
+where nuocsx = "trung quoc"	RequestError: Invalid column name 'trung quoc'.
