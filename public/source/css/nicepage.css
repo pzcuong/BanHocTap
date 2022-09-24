@@ -1952,7 +1952,7 @@ a {
   height: auto !important;
 }
 .u-form-group {
-  text-align: start;
+  text-align: justify;
 }
 .u-btn-submit {
   display: inline-block;

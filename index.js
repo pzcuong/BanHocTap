@@ -9,7 +9,7 @@ var compression = require('compression');
 const authRoute = require('./src/auth/auth.routers');
 const userRoute = require('./src/users/users.routers');
 const adminRoute = require('./src/admin/admin.routers');
-const emailRoute = require('./src/email/email.controller');
+const emailController = require('./src/email/email.controller');
 const spreadsheetsModels = require('./src/spreadsheets/spreadsheets.models');
 
 require('dotenv').config();
@@ -106,6 +106,7 @@ app.post('/dangky/:vitri', async (req, res) => {
                 message: "Vị trí không hợp lệ"
             });
         }
+        emailController.GuiMailDangKyPV(data.email, "Thông báo kết quả đăng ký phỏng vấn", req.params.vitri);
         return res.json({
             success: true,
             message: "Đăng ký thành công"
@@ -119,6 +120,10 @@ app.post('/dangky/:vitri', async (req, res) => {
     }
 });
 
+app.get('/testmail', (req, res) => {
+    let html = pug.renderFile('public/email/index.pug', {position: "position"});
+    res.send(html);
+});
 
 app.use((req, res, next) => {
     let html = pug.renderFile('public/404.pug', {

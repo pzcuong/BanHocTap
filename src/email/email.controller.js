@@ -1,7 +1,9 @@
 const nodemailer = require("nodemailer");
+var pug = require('pug');
+
 require('dotenv').config();
 
-async function main() {
+async function GuiMailDangKyPV(receivers, subject, position) {
   let transporter = nodemailer.createTransport({
     host: "smtp.porkbun.com",
     port: 587,
@@ -12,16 +14,35 @@ async function main() {
     },
   });
 
+  let html = pug.renderFile('public/email/index.pug', {position: position});
+
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Thông báo WeQuery" <notice@wequery.app>', // sender address
-    to: "20521150@gm.uit.edu.vn, pzcuonguit@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
+    from: '"Thông báo từ Ban Học Tập" <notice@banhoctap.dev>', // sender address
+    to: `20521150@gm.uit.edu.vn, ${receivers}` , // list of receivers
+    subject: subject, // Subject line
+    html: html, // html body
+    attachments: [
+      {
+        filename: 'logo.png',
+        path: 'public/email/images/image-3.png',
+        cid: 'logo'
+      },
+      {
+        filename: 'image-1.png',
+        path: 'public/email/images/image-1.png',
+        cid: 'image-1'
+      },
+      {
+        filename: 'image-2.png',
+        path: 'public/email/images/image-2.png',
+        cid: 'image-2'
+      },
+    ]
   });
 
   console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 }
 
+exports.GuiMailDangKyPV = GuiMailDangKyPV;
