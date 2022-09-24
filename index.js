@@ -65,6 +65,7 @@ app.post('/dangky/:vitri', async (req, res) => {
                 message: "Mã số sinh viên đã tồn tại"
             });
     }
+    console.log(data);
 
     if(!data.name || !data.email || !data.mssv || !data.LopSV || !data.FacebookURL || !data.LyDoThamGia || !data.TinhCachMuonLamViec || !data.TinhCachKhongMuonLamViec || !data.TinhHuong || !data.CauHoi2)
         return res.json({

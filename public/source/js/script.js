@@ -15,13 +15,14 @@ async function Submit() {
   }
 
   let url = window.location.href;
-  let vitri = url.substring(url.lastIndexOf('/') + 1);
+  let vitri = url.split("/")[4];
   if(vitri == 'Training') 
     data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=TinhHuongTraining]").value;
   else if(vitri == 'TruyenThong')
     data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=KyNangTruyenThong]").value;
   else if(vitri == 'Khac')
     data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=LyDoChonKhac]").value;
+
   let response = await fetch(url, {
           method: 'POST',
           headers: {
