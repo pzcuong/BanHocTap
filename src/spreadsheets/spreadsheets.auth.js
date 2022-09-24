@@ -12,9 +12,9 @@ oauth2Client.setCredentials({
   refresh_token: process.env.REFRESH_TOKEN
 });
 
-// // const spreadsheets = google.sheets({
-// //   //version: 'v3',
-// //   auth: oauth2Client
-// // });
+const spreadsheets = google.sheets({
+  version: 'v4',
+  auth: oauth2Client
+});
 
-// exports.spreadsheets = spreadsheets;
+exports.spreadsheets = spreadsheets;

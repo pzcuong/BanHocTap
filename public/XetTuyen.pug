@@ -9,6 +9,7 @@ html(style='font-size: 16px;' lang='en')
     link(rel='stylesheet' href='/public/source/css/nicepage.css' media='screen')
     link(rel='stylesheet' href='/public/source/css/XetTuyen.css' media='screen')
     script.u-script(type='text/javascript' src='/public/source/js/jquery.js' defer='')
+    script.u-script(type='text/javascript' src='/public/source/js/script.js' defer='')
     script.u-script(type='text/javascript' src='/public/source/js/nicepage.js' defer='')
     
     link#u-theme-google-font(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i')
@@ -82,7 +83,7 @@ html(style='font-size: 16px;' lang='en')
                     br
                     | Vị trí: #{position}
                   .u-expanded-width.u-form.u-form-1
-                    form.u-clearfix.u-form-spacing-10.u-form-vertical.u-inner-form(action='https://forms.nicepagesrv.com/Form/Process' source='email' name='form-1' style='padding: 10px;')
+                    form.u-clearfix.u-form-spacing-10.u-form-vertical.u-inner-form(style='padding: 10px;' id='formElem1')
                       .u-form-group.u-form-name.u-label-none
                         label.u-custom-font.u-font-roboto.u-label.u-label-1(for='name-716f') Họ và tên
                         input#name-716f.u-border-1.u-border-grey-30.u-input.u-input-rectangle.u-white(type='text' placeholder='Nhập đầy đủ họ và tên của bạn' name='name' required='')
@@ -99,7 +100,7 @@ html(style='font-size: 16px;' lang='en')
               .u-container-style.u-layout-cell.u-shape-rectangle.u-size-38.u-layout-cell-2
                 .u-container-layout.u-container-layout-2
                   .u-form.u-form-2
-                    form.u-clearfix.u-form-spacing-15.u-form-vertical.u-inner-form(action='#' style='padding: 0;' source='custom' name='form')
+                    form.u-clearfix.u-form-spacing-15.u-form-vertical.u-inner-form(action='#' style='padding: 0;' source='custom' name='form' id='formElem2')
                       .u-form-email.u-form-group.u-form-group-4
                         label.u-custom-font.u-font-roboto.u-label.u-label-3(for='email-a142') Facebook
                         input#email-a142.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-3(type='url' placeholder='Nhập vào đường dẫn Facebook của bạn' name='FacebookURL' required='')
@@ -108,10 +109,10 @@ html(style='font-size: 16px;' lang='en')
                         textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Lý do của bạn là...' rows='6' cols='50' name='LyDoThamGia' required='required')
                       .u-form-group.u-form-group-6
                         label.u-custom-font.u-font-roboto.u-label.u-label-5(for='phone-447e') 4 tính cách người bạn muốn làm việc cùng
-                        input#phone-447e.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-5(type='text' placeholder='Nhập vào tính cách...' name='TichCachMuonLamViec' required='required')
+                        input#phone-447e.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-5(type='text' placeholder='Nhập vào tính cách...' name='TinhCachMuonLamViec' required='required')
                       .u-form-group.u-form-group-7
                         label.u-custom-font.u-font-roboto.u-label.u-label-6(for='message-f2a8') 4 tính cách người bạn KHÔNG muốn làm việc cùng
-                        input#message-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-6(placeholder='Nhập vào tính cách...' name='TichCachKhongMuonLamViec' required='required' type='text')
+                        input#message-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-6(placeholder='Nhập vào tính cách...' name='TinhCachKhongMuonLamViec' required='required' type='text')
                       .u-form-group.u-form-group-7 
                         label.u-custom-font.u-font-roboto.u-label.u-label-6(for='message-f2a8') Tình huống: Bạn đang làm việc với 1 bạn khác, bạn thấy bạn đó đang làm sai 1 công việc nào đó hoặc làm việc chậm trễ tiến độ. Trong trường hợp này bạn sẽ giải quyết như thế nào?
                         textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Giải quyết của bạn là...' rows='6' cols='50' name='TinhHuong' required='required')
@@ -119,22 +120,22 @@ html(style='font-size: 16px;' lang='en')
                       if (vitri == 'Training')
                         .u-form-group.u-form-group-7 
                           label.u-custom-font.u-font-roboto.u-label.u-label-6(for='message-f2a8') Tình huống: Bạn đang training tại giảng đường, thì có 1 bạn thắc mắc về kiến thức mà bạn cũng không rõ. Trong trường hợp này bạn sẽ giải quyết như thế nào?
-                          textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Giải quyết của bạn là...' rows='6' cols='50' name='TinhHuong' required='required')
+                          textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Giải quyết của bạn là...' rows='6' cols='50' name='TinhHuongTraining' required='required')
                       //- Vị trí Truyền thông
                       if (vitri == 'TruyenThong')
                         .u-form-group.u-form-group-7 
                           label.u-custom-font.u-font-roboto.u-label.u-label-6(for='message-f2a8') Theo bạn, một người truyền thông nên có những kỹ năng gì?
-                          textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Gâu trả lời của bạn là...' rows='6' cols='50' name='TinhHuong' required='required')
+                          textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Câu trả lời của bạn là...' rows='6' cols='50' name='KyNangTruyenThong' required='required')
                       //- Vị trí Khác
                       if (vitri == 'Khac')
                         .u-form-group.u-form-group-7 
                           label.u-custom-font.u-font-roboto.u-label.u-label-6(for='message-f2a8') Tại sao bạn lại chọn vị trí khác?
-                          textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Gâu trả lời của bạn là...' rows='6' cols='50' name='TinhHuong' required='required')
+                          textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Câu trả lời của bạn là...' rows='6' cols='50' name='LyDoChonKhac' required='required')
   
                       .u-align-left.u-form-group.u-form-submit.u-form-group-8
-                        a.u-border-none.u-btn.u-btn-rectangle.u-btn-submit.u-button-style.u-custom-font.u-font-roboto.u-palette-4-base.u-btn-2(href='#')
+                        a.u-border-none.u-btn.u-btn-rectangle.u-btn-submit.u-button-style.u-custom-font.u-font-roboto.u-palette-4-base.u-btn-2(onclick='Submit()')
                           | GỬI KẾT QUẢ
                           br
-                        input.u-form-control-hidden(type='submit' value='submit')
                       .u-form-send-message.u-form-send-success  Thank you! Your message has been sent. 
                       .u-form-send-error.u-form-send-message  Unable to send your message. Please fix errors then try again. 
+

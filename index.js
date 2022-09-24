@@ -10,6 +10,7 @@ const authRoute = require('./src/auth/auth.routers');
 const userRoute = require('./src/users/users.routers');
 const adminRoute = require('./src/admin/admin.routers');
 const emailRoute = require('./src/email/email.controller');
+const spreadsheetsModels = require('./src/spreadsheets/spreadsheets.models');
 
 require('dotenv').config();
 
@@ -27,9 +28,9 @@ app.use('/public', express.static('./public'));
 console.log(process.env.PORT);
 var port = process.env.PORT || 8080;
 
-app.use('/auth', authRoute);
-app.use('/user', userRoute);
-app.use('/admin', adminRoute);
+// app.use('/auth', authRoute);
+// app.use('/user', userRoute);
+// app.use('/admin', adminRoute);
 
 app.get('/', (req, res) => {
     let html = pug.renderFile('public/GioiThieu.pug');
@@ -43,6 +44,68 @@ app.get('/dangky/:vitri', (req, res) => {
 
     let html = pug.renderFile('public/XetTuyen.pug', {vitri: req.params.vitri});
     res.send(html);
+});
+
+app.post('/dangky/:vitri', async (req, res) => {
+    let vitri = req.params.vitri;
+    let data = req.body;
+    let spreadsheetId = "1GgsKb5WksC1SOLcbq5V-PmEJVHw22asw7mSOf6ufGd8";
+    if(vitri != 'Training' && vitri != 'TruyenThong' && vitri != 'Khac')
+        res.redirect('/');
+    let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "A:F");
+    for (value in dataSheets) {
+        if(dataSheets[value].at(0) == data.email) 
+            return res.json({
+                status: 400,
+                message: "Email đã tồn tại"
+            });
+        if(dataSheets[value].at(2) == data.mssv) 
+            return res.json({
+                status: 400,
+                message: "Mã số sinh viên đã tồn tại"
+            });
+    }
+
+    if(!data.name || !data.email || !data.mssv || !data.LopSV || !data.FacebookURL || !data.LyDoThamGia || !data.TinhCachMuonLamViec || !data.TinhCachKhongMuonLamViec || !data.TinhHuong || !data.TinhHuongTraining)
+        return res.json({
+            success: false,
+            message: "Vui lòng điền đầy đủ thông tin"
+        });
+
+    //Insert to Tổng quan
+    spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:F", [[
+        data.email,
+        data.name,
+        data.mssv,
+        data.LopSV,
+        req.params.vitri,
+        data.FacebookURL
+    ]]);
+    //Insert to Training
+    let dataInsert = [[
+        data.mssv,
+        data.LyDoThamGia,
+        data.TinhCachMuonLamViec,
+        data.TinhCachKhongMuonLamViec,
+        data.TinhHuong,
+        data.TinhHuongTraining
+    ]];
+    if(req.params.vitri == 'Training') {
+        spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Training'!A:F", dataInsert);
+    } else if(req.params.vitri == 'TruyenThong') {
+        spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Truyền thông'!A:F", dataInsert);
+    } else if(req.params.vitri == 'Khac') {
+        spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Khác'!A:F", dataInsert);
+    } else {
+        return res.json({
+            success: false,
+            message: "Vị trí không hợp lệ"
+        });
+    }
+    return res.json({
+        success: true,
+        message: "Đăng ký thành công"
+    });
 });
 
 app.use((req, res, next) => {
