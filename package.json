@@ -20,6 +20,7 @@
     "googleapis": "^107.0.0",
     "json2html": "^0.0.8",
     "jsonwebtoken": "^8.5.1",
+    "ldbutton": "^2.0.1",
     "mssql": "^9.0.0",
     "node-cache": "^5.1.2",
     "nodemailer": "^6.7.8",

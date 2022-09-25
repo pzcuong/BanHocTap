@@ -78,7 +78,7 @@ app.post('/dangky/:vitri', async (req, res) => {
         console.log(data);
     
         //Insert to Tổng quan
-        spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:F", [[
+        await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:F", [[
             data.email,
             data.name,
             data.mssv,
@@ -106,7 +106,7 @@ app.post('/dangky/:vitri', async (req, res) => {
                 message: "Vị trí không hợp lệ"
             });
         }
-        emailController.GuiMailDangKyPV(data.email, "Thông báo kết quả tham gia sơ tuyển vào Ban Học Tập", req.params.vitri, data.name);
+        await emailController.GuiMailDangKyPV(data.email, "Thông báo kết quả tham gia sơ tuyển vào Ban Học Tập", req.params.vitri, data.name);
         return res.json({
             success: true,
             message: "Đăng ký thành công! Vui lòng kiểm tra email để biết kết quả",

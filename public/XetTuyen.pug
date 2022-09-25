@@ -8,6 +8,8 @@ html(style='font-size: 16px;' lang='en')
     title Đăng ký tham gia Ban Học Tập
     link(rel='stylesheet' href='/public/source/css/nicepage.css' media='screen')
     link(rel='stylesheet' href='/public/source/css/XetTuyen.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/gh/loadingio/ldbutton@v1.0.1/dist/ldbtn.min.css')
+
     link(rel='icon' href='/public/source/images/Logo.png')
 
     script.u-script(type='text/javascript' src='/public/source/js/jquery.js' defer='')
@@ -109,9 +111,6 @@ html(style='font-size: 16px;' lang='en')
                           textarea#name-f2a8.u-border-1.u-border-grey-25.u-border-no-left.u-border-no-right.u-border-no-top.u-input.u-input-rectangle.u-white.u-input-4(placeholder='Câu trả lời của bạn là...' rows='6' cols='50' name='LyDoChonKhac' required='required')
   
                       .u-align-left.u-form-group.u-form-submit.u-form-group-8
-                        a.u-border-none.u-btn.u-btn-rectangle.u-btn-submit.u-button-style.u-custom-font.u-font-roboto.u-palette-4-base.u-btn-2(onclick='Submit()')
+                        button.u-border-none.u-btn.u-btn-rectangle.u-btn-submit.u-button-style.u-custom-font.u-font-roboto.u-palette-4-base.u-btn-2.ld-over-full(onclick='Submit()')
                           | GỬI KẾT QUẢ
                           br
-                      .u-form-send-message.u-form-send-success  Thank you! Your message has been sent. 
-                      .u-form-send-error.u-form-send-message  Unable to send your message. Please fix errors then try again. 
-

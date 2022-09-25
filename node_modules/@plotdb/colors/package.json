@@ -1,0 +1,19 @@
+{
+  "name": "@plotdb/colors",
+  "version": "0.0.1",
+  "description": "coloring output",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "zbryikt",
+  "license": "MIT",
+  "devDependencies": {
+    "livescript": "^1.6.0",
+    "uglify-js": "^3.14.5"
+  }
+}

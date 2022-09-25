@@ -1,4 +1,10 @@
 async function Submit() {
+  var theButton = document.querySelector(".ld-over-full")
+  theButton.classList.toggle("running")
+  //prevent click button
+  theButton.disabled = true;
+
+
   var formThongTinCaNhan = document.querySelector("#formElem1");
   var formThongTinXetTuyen = document.querySelector("#formElem2");
 
@@ -33,6 +39,7 @@ async function Submit() {
   })
   let result = await response.json();
   alert(result.message);
-
+  theButton.classList.toggle("running");
+  theButton.disabled = false;
 }
 
