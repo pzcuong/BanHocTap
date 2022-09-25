@@ -106,10 +106,11 @@ app.post('/dangky/:vitri', async (req, res) => {
                 message: "Vị trí không hợp lệ"
             });
         }
-        emailController.GuiMailDangKyPV(data.email, "Thông báo kết quả đăng ký phỏng vấn", req.params.vitri);
+        emailController.GuiMailDangKyPV(data.email, "Thông báo kết quả tham gia sơ tuyển vào Ban Học Tập", req.params.vitri, data.name);
         return res.json({
             success: true,
-            message: "Đăng ký thành công"
+            message: "Đăng ký thành công! Vui lòng kiểm tra email để biết kết quả",
+            redirect: "/"
         });
     } catch (error) {
         console.log(error);
