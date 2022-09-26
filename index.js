@@ -33,8 +33,22 @@ var port = process.env.PORT || 8080;
 // app.use('/admin', adminRoute);
 
 app.get('/', (req, res) => {
+    //check if time in date 30/09/2022 08:00:00
+    var date = new Date();
+    var date2 = new Date(2022, 8, 29, 8, 0, 0);
+    date2.setDate(date2.getDate() + 1);
+    date2.setHours(date2.getHours() + 7);
+    date2 = new Date(date2);
+    //convert date2 to utc
+    console.log(date.toUTCString());
+    console.log(date2.toUTCString());
+
+    if(date.getTime() < date2.getTime()) {
+        let html = pug.renderFile('public/countdown.pug', {dateCountdown: date2.toUTCString(), dateNow: date.toUTCString()});
+        return res.send(html);
+    }
     let html = pug.renderFile('public/GioiThieu.pug');
-    res.send(html);
+    return res.send(html);
 });
 
 app.get('/dangky/:vitri', (req, res) => {
@@ -134,8 +148,8 @@ app.post('/dangky/:vitri', async (req, res) => {
     }
 });
 
-app.get('/testmail', (req, res) => {
-    let html = pug.renderFile('public/email/index.pug', {position: "position"});
+app.get('/test', (req, res) => {
+    let html = pug.renderFile('public/countdown.pug', {position: "position"});
     res.send(html);
 });
 
