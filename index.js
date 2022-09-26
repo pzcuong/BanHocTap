@@ -32,12 +32,14 @@ var port = process.env.PORT || 8080;
 // app.use('/user', userRoute);
 // app.use('/admin', adminRoute);
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     //check if time in date 30/09/2022 08:00:00
+    let spreadsheetId = "1GgsKb5WksC1SOLcbq5V-PmEJVHw22asw7mSOf6ufGd8";
+
+    let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Thời gian'!A:F");
     var date = new Date();
-    var date2 = new Date(2022, 8, 29, 8, 0, 0);
-    date2.setDate(date2.getDate() + 1);
-    date2.setHours(date2.getHours() + 7);
+    var date2 = new Date(dataSheets.at(1).at(0));
+    date2.setHours(date2.getHours() - 7);
     date2 = new Date(date2);
     //convert date2 to utc
     console.log(date.toUTCString());
@@ -75,7 +77,7 @@ app.post('/dangky/:vitri', async (req, res) => {
                 message: check.message
             });
 
-        let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "A:G");
+        let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Tổng quan'!A:G");
         
         for (value in dataSheets) {
             if(dataSheets[value].at(1) == data.email) 
