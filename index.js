@@ -79,8 +79,13 @@ app.post('/dangky/:vitri', async (req, res) => {
         //Get time now
         let date = new Date();
         date.setHours(date.getHours() + 7);
-        let time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    
+        //auto add 0 to date, month, hour, minute
+        let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+        let month = date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth();
+        let hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+        let minute = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+        let second = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+        let time = day + '/' + month + '/' + date.getFullYear() + ' ' + hour + ':' + minute + ':' + second;    
         //Insert to Tổng quan
         await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:G", [[
             time,
@@ -151,45 +156,58 @@ app.listen(port, function () {
 });
 
 async function XuLyDuLieu(data) {
-    let check = true;
-    let loi;
     if(!data.name || data.name.length < 5)
-        check = false,
-        loi = "Tên không hợp lệ";
-    if(!data.email || !data.email.includes('@') || !data.email.includes('.'))
-        check = false,
-        loi = "Email không hợp lệ";
-    if(!data.mssv || data.mssv.length != 8)
-        check = false,
-        loi = "Mã số sinh viên không hợp lệ";
-    if(!data.LopSV)
-        check = false,
-        loi = "Lớp sinh viên không hợp lệ";
-    if(!data.FacebookURL || !data.FacebookURL.includes('.com'))
-        check = false,
-        loi = "Facebook URL không hợp lệ";
-    if(!data.LyDoThamGia || data.LyDoThamGia.length < 5)   
-        check = false,
-        loi = "Lý do tham gia không hợp lệ";
-    if(!data.TinhCachMuonLamViec || data.TinhCachMuonLamViec.length < 5)
-        check = false,
-        loi = "Tính cách muốn làm việc không hợp lệ";
-    if(!data.TinhCachKhongMuonLamViec || data.TinhCachKhongMuonLamViec.length < 5)
-        check = false,
-        loi = "Tính cách không muốn làm việc không hợp lệ";
-    if(!data.TinhHuong || data.TinhHuong.length < 5) 
-        check = false,
-        loi = "Tình huống không hợp lệ";
-    if(!data.CauHoi2 || data.CauHoi2.length < 5)
-        check = false,
-        loi = "Câu hỏi 2 không hợp lệ";
-    if(!check)
         return ({
             success: false,
-            message: loi
+            message: "Họ và tên không hợp lệ!"
+        })
+    if(!data.email || !data.email.includes('@') || !data.email.includes('.'))
+        return ({
+            success: false,
+            message: "Email không hợp lệ. Khuyến khích sử dụng email của trường!"
+        })
+    if(!data.mssv || data.mssv.length != 8)
+        return ({
+            success: false,
+            message: "Mã số sinh viên không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.LopSV)
+        return ({
+            success: false,
+            message: "Lớp sinh viên không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.FacebookURL || !data.FacebookURL.includes('.com'))
+        return ({
+            success: false,
+            message: "Facebook URL không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.LyDoThamGia || data.LyDoThamGia.length < 5)   
+        return ({
+            success: false,
+            message: "Lý do tham gia không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.TinhCachMuonLamViec || data.TinhCachMuonLamViec.length < 5)
+        return ({
+            success: false,
+            message: "Tính cách muốn làm việc không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.TinhCachKhongMuonLamViec || data.TinhCachKhongMuonLamViec.length < 5)
+        return ({
+            success: false,
+            message: "Tính cách không muốn làm việc không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.TinhHuong || data.TinhHuong.length < 5) 
+        return ({
+            success: false,
+            message: "Tình huống không hợp lệ. Vui lòng kiểm tra lại!"
+        })
+    if(!data.CauHoi2 || data.CauHoi2.length < 5)
+        return ({
+            success: false,
+            message: "Câu hỏi 2 không hợp lệ. Vui lòng kiểm tra lại!"
         })
     return ({
         success: true,
-        message: "Dữ liệu hợp lệ"
+        message: "Dữ liệu hợp lệ!"
     })
 }
