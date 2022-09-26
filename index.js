@@ -151,7 +151,7 @@ app.post('/dangky/:vitri', async (req, res) => {
 });
 
 app.get('/rutgon', (req, res) => {
-    let html = pug.renderFile('public/RutGonLink.pug');
+    let html = pug.renderFile('public/user/RutGonLink.pug');
     res.send(html);
 });
 
