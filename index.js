@@ -78,7 +78,8 @@ app.post('/dangky/:vitri', async (req, res) => {
         console.log(data);
         //Get time now
         let date = new Date();
-        let time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " + date.getHours()+7 + ":" + date.getMinutes() + ":" + date.getSeconds();
+        date.setHours(date.getHours() + 7);
+        let time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     
         //Insert to Tổng quan
         await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:G", [[
