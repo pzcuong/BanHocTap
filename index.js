@@ -61,15 +61,15 @@ app.post('/dangky/:vitri', async (req, res) => {
                 message: check.message
             });
 
-        let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "A:F");
+        let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "A:G");
         
         for (value in dataSheets) {
-            if(dataSheets[value].at(0) == data.email) 
+            if(dataSheets[value].at(1) == data.email) 
                 return res.json({
                     status: 400,
                     message: "Email đã tồn tại"
                 });
-            if(dataSheets[value].at(2) == data.mssv) 
+            if(dataSheets[value].at(3) == data.mssv) 
                 return res.json({
                     status: 400,
                     message: "Mã số sinh viên đã tồn tại"
@@ -78,7 +78,7 @@ app.post('/dangky/:vitri', async (req, res) => {
         console.log(data);
         //Get time now
         let date = new Date();
-        let time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        let time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " + date.getHours()+7 + ":" + date.getMinutes() + ":" + date.getSeconds();
     
         //Insert to Tổng quan
         await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:G", [[
