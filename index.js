@@ -76,9 +76,13 @@ app.post('/dangky/:vitri', async (req, res) => {
                 });
         }
         console.log(data);
+        //Get time now
+        let date = new Date();
+        let time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     
         //Insert to Tổng quan
-        await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:F", [[
+        await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Tổng quan'!A:G", [[
+            time,
             data.email,
             data.name,
             data.mssv,
@@ -97,8 +101,10 @@ app.post('/dangky/:vitri', async (req, res) => {
         if(req.params.vitri == 'Training') {
             await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Training'!A:F", dataInsert);
         } else if(req.params.vitri == 'TruyenThong') {
+            req.params.vitri = 'Truyền thông';
             await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Truyền thông'!A:F", dataInsert);
         } else if(req.params.vitri == 'Khac') {
+            req.params.vitri = 'Khác';
             await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Khác'!A:F", dataInsert);
         } else {
             return res.json({
