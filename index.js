@@ -191,7 +191,7 @@ app.post('/rutgon', async (req, res) => {
     ]]);
     return res.json({
         success: true,
-        message: "Rút gọn link thành công",
+        message: "Rút gọn link thành công. Link rút gọn của bạn là: " + data.ShortURL,
         link: data.ShortURL
     });
 })
