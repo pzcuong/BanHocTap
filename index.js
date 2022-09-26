@@ -166,7 +166,7 @@ app.post('/rutgon', async (req, res) => {
     if(!data.ShortURL.startsWith('https://banhoctap.dev/') || data.ShortURL.length < 25) {
         return res.json({
             status: 400,
-            message: "Link rút gọn không hợp lệ"
+            message: "Link rút gọn không hợp lệ. Vui lòng nhập link rút gọn có dạng https://banhoctap.dev/abcxyz"
         });
     }
     let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
@@ -203,9 +203,8 @@ app.get('/:linkrutgon', async(req, res) => {
         let url = 'https://banhoctap.dev/' + req.params.linkrutgon;
         console.log(url);
         console.log(dataSheets[value].at(1));
-        if(dataSheets[value].at(1) == url) {
+        if(dataSheets[value].at(1) == url) 
             return res.redirect(dataSheets[value].at(0));
-        }
     }
     return res.redirect('/');
 });
