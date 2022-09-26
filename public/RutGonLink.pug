@@ -69,8 +69,7 @@ html(style='font-size: 16px;' lang='en')
         h2.u-align-center.u-custom-font.u-font-roboto.u-text.u-text-default.u-text-1 Hệ thống hỗ trợ rút gọn link
     section#sec-6baf.u-clearfix.u-section-2
       .u-clearfix.u-sheet.u-sheet-1
-        .u-expanded-width.u-form.u-form-1
-          form.u-clearfix.u-form-spacing-10.u-form-vertical.u-inner-form(action='#' source='custom' name='form' style='padding: 10px;' id='formElem')
+          form.u-clearfix.u-form-spacing-10.u-form-vertical.u-inner-form(style='padding: 10px;' id='formElem')
             .u-form-group.u-form-name
               label.u-custom-font.u-font-roboto.u-label(for='name-78a3') URL gốc
               input#name-78a3.u-border-1.u-border-grey-30.u-input.u-input-rectangle.u-white(type='text' placeholder='Nhập vào địa chỉ gốc cần được rút gọn' name='LongURL' required='')
@@ -81,5 +80,4 @@ html(style='font-size: 16px;' lang='en')
               label.u-custom-font.u-font-roboto.u-label(for='name-78a3') Ghi chú
               input#name-78a3.u-border-1.u-border-grey-30.u-input.u-input-rectangle.u-white(type='text' placeholder='Nhập vào ghi chú' name='GhiChu')
             .u-align-left.u-form-group.u-form-submit
-              button.u-btn.u-btn-submit.u-button-style(onclick='SubmitRutGonLink()') Xác nhận
-              input.u-form-control-hidden(type='submit' value='submit')
+              a.u-btn.u-btn-submit.u-button-style(onclick='SubmitRutGonLink()') Xác nhận

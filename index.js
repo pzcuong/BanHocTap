@@ -157,6 +157,18 @@ app.get('/rutgon', (req, res) => {
 
 app.post('/rutgon', async (req, res) => {
     let data = req.body;
+    if(!data.LongURL) {
+        return res.json({
+            status: 400,
+            message: "Vui lòng nhập link gốc cần được rút gọn"
+        });
+    }
+    if(!data.ShortURL.startsWith('https://banhoctap.dev/') || data.ShortURL.length < 25) {
+        return res.json({
+            status: 400,
+            message: "Link rút gọn không hợp lệ"
+        });
+    }
     let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
     let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B");
     for (value in dataSheets) {
@@ -188,9 +200,11 @@ app.get('/:linkrutgon', async(req, res) => {
     let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
     let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B");
     for (value in dataSheets) {
-        let url = 'https://banhoctap.dev/' + dataSheets[value].at(1);
-        if(dataSheets[value].at(0) == url) {
-            return res.redirect(dataSheets[value].at(1));
+        let url = 'https://banhoctap.dev/' + req.params.linkrutgon;
+        console.log(url);
+        console.log(dataSheets[value].at(1));
+        if(dataSheets[value].at(1) == url) {
+            return res.redirect(dataSheets[value].at(0));
         }
     }
     return res.redirect('/');
