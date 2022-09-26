@@ -42,8 +42,8 @@ app.get('/', async (req, res) => {
     date2.setHours(date2.getHours() - 7);
     date2 = new Date(date2);
     //convert date2 to utc
-    console.log(date.toUTCString());
-    console.log(date2.toUTCString());
+    // console.log(date.toUTCString());
+    // console.log(date2.toUTCString());
 
     if(date.getTime() < date2.getTime()) {
         let html = pug.renderFile('public/countdown.pug', {dateCountdown: date2.toUTCString(), dateNow: date.toUTCString()});
@@ -150,9 +150,50 @@ app.post('/dangky/:vitri', async (req, res) => {
     }
 });
 
-app.get('/test', (req, res) => {
-    let html = pug.renderFile('public/countdown.pug', {position: "position"});
+app.get('/rutgon', (req, res) => {
+    let html = pug.renderFile('public/RutGonLink.pug');
     res.send(html);
+});
+
+app.post('/rutgon', async (req, res) => {
+    let data = req.body;
+    let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
+    let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B");
+    for (value in dataSheets) {
+        if(dataSheets[value].at(0) == data.LongURL) 
+            return res.json({
+                status: 400,
+                message: "Link bạn muốn rút gọn đã tồn tại",
+                link: dataSheets[value].at(1)
+            });
+        if(dataSheets[value].at(1) == data.ShortURL)
+            return res.json({
+                status: 400,
+                message: "Link rút gọn đã tồn tại. Vui lòng chọn link khác"
+            });
+    }
+    await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B", [[
+        data.LongURL,
+        data.ShortURL,
+        data.GhiChu
+    ]]);
+    return res.json({
+        success: true,
+        message: "Rút gọn link thành công",
+        link: data.ShortURL
+    });
+})
+
+app.get('/:linkrutgon', async(req, res) => {
+    let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
+    let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B");
+    for (value in dataSheets) {
+        let url = 'https://banhoctap.dev/' + dataSheets[value].at(1);
+        if(dataSheets[value].at(0) == url) {
+            return res.redirect(dataSheets[value].at(1));
+        }
+    }
+    return res.redirect('/');
 });
 
 app.use((req, res, next) => {

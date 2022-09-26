@@ -1,0 +1,85 @@
+doctype html
+html(style='font-size: 16px;' lang='en')
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(charset='utf-8')
+    meta(name='keywords' content='Đăng ký phỏng vấn')
+    meta(name='description' content='')
+    title Đăng ký tham gia Ban Học Tập
+    link(rel='stylesheet' href='/public/source/css/nicepage.css' media='screen')
+    link(rel='stylesheet' href='/public/source/css/XetTuyen.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/gh/loadingio/ldbutton@v1.0.1/dist/ldbtn.min.css')
+
+    link(rel='icon' href='/public/source/images/Logo.png')
+
+    script.u-script(type='text/javascript' src='/public/source/js/jquery.js' defer='')
+    script.u-script(type='text/javascript' src='/public/source/js/script.js' defer='')
+    script.u-script(type='text/javascript' src='/public/source/js/nicepage.js' defer='')
+    
+    link#u-theme-google-font(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i')
+    link#u-page-google-font(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i')
+    script(type='application/ld+json').
+      {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Ban Học Tập Khoa Học Và Kỹ Thuật Thông Tin",
+      "logo": "/public/source/images/Logo.png"
+      }
+
+    // Messenger Plugin chat Code
+    #fb-root
+    // Your Plugin chat code
+    #fb-customer-chat.fb-customerchat
+    script.
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "123796654757372");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    // Your SDK code
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      xfbml            : true,
+      version          : 'v15.0'
+      });
+      };
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    meta(name='theme-color' content='#2799b1')
+    meta(property='og:title' content='Page 1')
+    meta(property='og:type' content='website')
+  body.u-body.u-xl-mode(data-lang='vi')
+
+    header#sec-9c34.u-clearfix.u-header.u-palette-1-dark-1.u-sticky.u-sticky-cf2b(data-animation-name='' data-animation-duration='0' data-animation-delay='0' data-animation-direction='')
+      .u-clearfix.u-sheet.u-sheet-1
+        a.u-image.u-logo.u-image-1(href='/' data-image-width='1080' data-image-height='1080')
+          img.u-logo-image.u-logo-image-1(src='/public/source/images/Logo.png')
+        p.u-align-left.u-custom-font.u-font-raleway.u-text.u-text-1
+          span.u-text-white Ban Học Tập
+          br
+          span.u-text-white(style="color: #2799b1 !important") Khoa Học và Kỹ thuật Thông tin
+
+    section#sec-bc7a.u-clearfix.u-section-1
+      .u-clearfix.u-sheet.u-sheet-1
+        h2.u-align-center.u-custom-font.u-font-roboto.u-text.u-text-default.u-text-1 Hệ thống hỗ trợ rút gọn link
+    section#sec-6baf.u-clearfix.u-section-2
+      .u-clearfix.u-sheet.u-sheet-1
+        .u-expanded-width.u-form.u-form-1
+          form.u-clearfix.u-form-spacing-10.u-form-vertical.u-inner-form(action='#' source='custom' name='form' style='padding: 10px;' id='formElem')
+            .u-form-group.u-form-name
+              label.u-custom-font.u-font-roboto.u-label(for='name-78a3') URL gốc
+              input#name-78a3.u-border-1.u-border-grey-30.u-input.u-input-rectangle.u-white(type='text' placeholder='Nhập vào địa chỉ gốc cần được rút gọn' name='LongURL' required='')
+            .u-form-group.u-form-group-2
+              label.u-custom-font.u-font-roboto.u-label(for='text-a7bf') URL rút gọn (dạng banhoctap.dev/...)
+              input#text-a7bf.u-border-1.u-border-grey-30.u-input.u-input-rectangle.u-white(type='text' name='ShortURL' placeholder='Nhập vào địa chỉ muốn rút gọn' value='https://banhoctap.dev/' required='')
+            .u-form-group.u-form-name
+              label.u-custom-font.u-font-roboto.u-label(for='name-78a3') Ghi chú
+              input#name-78a3.u-border-1.u-border-grey-30.u-input.u-input-rectangle.u-white(type='text' placeholder='Nhập vào ghi chú' name='GhiChu')
+            .u-align-left.u-form-group.u-form-submit
+              button.u-btn.u-btn-submit.u-button-style(onclick='SubmitRutGonLink()') Xác nhận
+              input.u-form-control-hidden(type='submit' value='submit')

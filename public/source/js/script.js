@@ -43,3 +43,20 @@ async function Submit() {
   theButton.disabled = false;
 }
 
+async function SubmitRutGonLink(){
+  var form = document.querySelector("#formElem");
+  let data = {
+      LongURL: form.querySelector("input[name='LongURL']").value,
+      ShortURL: form.querySelector("input[name='ShortURL']").value,
+      GhiChu: form.querySelector("input[name='GhiChu']").value
+  }
+  let res = await fetch("/rutgon", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+  })
+  let result = await res.json();
+  alert(result.message);
+}
