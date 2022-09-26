@@ -22,13 +22,38 @@ html(style='font-size: 16px;' lang='en')
       {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "name": "",
+      "name": "Ban Học Tập Khoa Học Và Kỹ Thuật Thông Tin",
       "logo": "/public/source/images/Logo.png"
       }
+
+    // Messenger Plugin chat Code
+    #fb-root
+    // Your Plugin chat code
+    #fb-customer-chat.fb-customerchat
+    script.
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "123796654757372");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    // Your SDK code
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      xfbml            : true,
+      version          : 'v15.0'
+      });
+      };
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
     meta(name='theme-color' content='#2799b1')
     meta(property='og:title' content='Page 1')
     meta(property='og:type' content='website')
-  body.u-body.u-xl-mode(data-lang='en')
+  body.u-body.u-xl-mode(data-lang='vi')
 
     header#sec-9c34.u-clearfix.u-header.u-palette-1-dark-1.u-sticky.u-sticky-cf2b(data-animation-name='' data-animation-duration='0' data-animation-delay='0' data-animation-direction='')
       .u-clearfix.u-sheet.u-sheet-1

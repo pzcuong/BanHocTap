@@ -33,7 +33,7 @@ var port = process.env.PORT || 8080;
 // app.use('/admin', adminRoute);
 
 app.get('/', (req, res) => {
-    let html = pug.renderFile('public/GioiThieu1.pug');
+    let html = pug.renderFile('public/GioiThieu.pug');
     res.send(html);
 });
 
