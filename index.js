@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser')
 var jwt = require('jsonwebtoken');
 var pug = require('pug');
 var compression = require('compression');
+const QRCode = require('qrcode');
 
 const authRoute = require('./src/auth/auth.routers');
 const userRoute = require('./src/users/users.routers');
@@ -169,6 +170,7 @@ app.post('/rutgon', async (req, res) => {
             message: "Link rút gọn không hợp lệ. Vui lòng nhập link rút gọn có dạng https://link.banhoctap.dev/abcxyz"
         });
     }
+
     let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
     let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B");
     for (value in dataSheets) {
@@ -184,15 +186,18 @@ app.post('/rutgon', async (req, res) => {
                 message: "Link rút gọn đã tồn tại. Vui lòng chọn link khác"
             });
     }
-    await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B", [[
+    let qr = await QRCode.toDataURL(data.LongURL, { width: 200, margin: 0 });
+    await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Rút gọn link'!A:D", [[
         data.LongURL,
         data.ShortURL,
-        data.GhiChu
+        data.GhiChu,
+        qr
     ]]);
     return res.json({
         success: true,
         message: "Rút gọn link thành công. Link rút gọn của bạn là: " + data.ShortURL,
-        link: data.ShortURL
+        link: data.ShortURL,
+        qr: qr
     });
 })
 

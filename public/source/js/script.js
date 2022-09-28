@@ -59,4 +59,20 @@ async function SubmitRutGonLink(){
   })
   let result = await res.json();
   alert(result.message);
+  console.log(result);
+  if(result.success == true) {
+    console.log(result);
+    var img = document.createElement("img");
+    var figcaption = document.createElement("FIGCAPTION");
+    var captionText = document.createTextNode(result.link);
+
+    img.src = result.qr;
+    img.style.size = "150%";
+
+    figcaption.appendChild(captionText);
+    var src = document.getElementById("qrcode");
+    src.appendChild(img);
+    src.appendChild(figcaption);
+  }
+
 }
