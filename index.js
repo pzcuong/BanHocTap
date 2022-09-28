@@ -174,12 +174,12 @@ app.post('/rutgon', async (req, res) => {
     let spreadsheetId = "1CmpEujfmtoF19ePYBikrdcKcJKurqsnxJ1VpXJz-Cso";
     let dataSheets = await spreadsheetsModels.getSpreadsheet(spreadsheetId, "'Rút gọn link'!A:B");
     for (value in dataSheets) {
-        if(dataSheets[value].at(0) == data.LongURL) 
-            return res.json({
-                status: 400,
-                message: "Link bạn muốn rút gọn đã tồn tại",
-                link: dataSheets[value].at(1)
-            });
+        // if(dataSheets[value].at(0) == data.LongURL) 
+        //     return res.json({
+        //         status: 400,
+        //         message: "Link bạn muốn rút gọn đã tồn tại",
+        //         link: dataSheets[value].at(1)
+        //     });
         if(dataSheets[value].at(1) == data.ShortURL)
             return res.json({
                 status: 400,
