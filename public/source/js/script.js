@@ -24,8 +24,10 @@ async function Submit() {
   let vitri = url.split("/")[4];
   if(vitri == 'Training') 
     data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=TinhHuongTraining]").value;
-  else if(vitri == 'TruyenThong')
+  else if(vitri == 'TruyenThong') {
     data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=KyNangTruyenThong]").value;
+    data.ViTri = formThongTinCaNhan.querySelector("select[name=select]").value;
+  }
   else if(vitri == 'Khac')
     data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=LyDoChonKhac]").value;
 

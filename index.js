@@ -125,7 +125,9 @@ app.post('/dangky/:vitri', async (req, res) => {
             await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Training'!A:F", dataInsert);
         } else if(req.params.vitri == 'TruyenThong') {
             req.params.vitri = 'Truyền thông';
-            await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Truyền thông'!A:F", dataInsert);
+            dataInsert[0].push(data.ViTri);
+            console.log(dataInsert);
+            await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Truyền thông'!A:G", dataInsert);
         } else if(req.params.vitri == 'Khac') {
             req.params.vitri = 'Khác';
             await spreadsheetsModels.insertSpreadsheet(spreadsheetId, "'Khác'!A:F", dataInsert);
