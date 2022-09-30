@@ -32,22 +32,29 @@ async function Submit() {
     else if(vitri == 'Khac')
       data.CauHoi2 = formThongTinXetTuyen.querySelector("textarea[name=LyDoChonKhac]").value;
   
+    const controller = new AbortController()
+
+    // 5 second timeout:
+    const timeoutId = setTimeout(() => controller.abort(), 20000)
     let response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-            json: true
-    })
+            json: true,
+            signal: controller.signal
+    }, {timeout: 20000});
     let result = await response.json();
+    console.log(result);
     alert(result.message);
-    theButton.classList.toggle("running");
+    theButton.classList.toggle("running")
     theButton.disabled = false;
-    if(result.status == true)
-      window.location.href = result.redirect;
+    if(result.success == true) {
+      window.location.href = url;
+    }      
   } catch (error) {
-    alert("Vui lòng kiểm tra lại thông tin");
+    alert("Vui lòng kiểm tra lại thông tin và bấm submit để thử lại. Nếu vẫn không được vui lòng liên hệ trực tiếp với ban tổ chức qua fanpage của chúng tôi.");
     theButton.classList.toggle("running");
     theButton.disabled = false;
   }
