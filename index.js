@@ -140,9 +140,11 @@ app.post('/dangky/:vitri', async (req, res) => {
         let result = await emailController.GuiMailDangKyPV(data.email, "Thông báo kết quả tham gia sơ tuyển vào Ban Học Tập", req.params.vitri, data.name);
         console.log(result);
         return res.json({
-            success: true,
-            message: "Đăng ký thành công! Vui lòng kiểm tra email để biết kết quả",
-            redirect: "/"
+            status: true,
+            message: "Đăng ký thành công",
+            redirect: "/thanhcong",
+            username: data.name,
+            position: req.params.vitri
         });
     } catch (error) {
         console.log(error);
@@ -201,6 +203,14 @@ app.post('/rutgon', async (req, res) => {
         link: data.ShortURL,
         qr: qr
     });
+})
+
+app.get('/thanhcong', (req, res) => {
+    let html = pug.renderFile('public/email/thanhcong.pug', {
+        name: "Nguyễn Văn A",
+        position: "Truyền thông"
+    });
+    res.send(html);
 })
 
 app.use((req, res, next) => {
