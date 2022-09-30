@@ -47,7 +47,7 @@ async function Submit() {
     if(result.status == true)
       window.location.href = result.redirect;
   } catch (error) {
-    alert("Có lỗi xảy ra, vui lòng thử lại");
+    alert("Vui lòng kiểm tra lại thông tin");
     theButton.classList.toggle("running");
     theButton.disabled = false;
   }
